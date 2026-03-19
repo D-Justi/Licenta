@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicii - Firma de Avocatură</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/11.jpg') center /cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 150vh;
+            justify-content: space-between;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .content {
+            margin-left: 10%;
+            margin-right: auto;
+            max-width: 60%;
+            text-align: left;
+            background: rgba(045, 30, 15, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="content">
+        <h2>Serviciile Noastre</h2>
+        <ul class="service-list">
+            <li>Consultanță juridică</li>
+            <li>Asistare și reprezentare în instanță</li>
+            <li>Redactare contracte</li>
+            <li>Asistență și reprezentare în negocieri</li>
+            <li>Recuperări creanțe</li>
+            <li>Constituiri și modificări societăți comerciale</li>
+            <li>Dizolvări și lichidări societăți comerciale</li>
+            <li>Constituiri și modificări asociații și fundații</li>
+            <li>Constituiri și modificări asociații proprietari</li>
+            <li>Litigii civile, administrative, de muncă</li>
+
+        </ul>
+    </div>
+
+     <%- include('../partials/footer') %>
+
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>

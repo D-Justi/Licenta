@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cabinet de Avocatură Drăghici Cristian Constantin | Avocat București</title>
+    <meta name="description"
+        content="Cabinet de Avocatură Drăghici Cristian Constantin – servicii juridice profesionale în București: consultanță, reprezentare în instanță, drept comercial, civil, administrativ și de familie.">
+    <meta name="keywords"
+        content="cabinet avocat București, avocat Drăghici Cristian, avocat drept comercial, avocat drept civil, avocat drept familie, reprezentare instanță, avocatură București">
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+
+    <meta property="og:title" content="Cabinet de Avocatură Drăghici Cristian Constantin | Avocat București">
+    <meta property="og:description"
+        content="Servicii juridice complete: consultanță, reprezentare în instanță și asistență juridică în București.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://draghicisiasociatii.ro/">
+    <meta property="og:image" content="https://draghicisiasociatii.ro/imagini/11.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cabinet de Avocatură Drăghici Cristian Constantin | Avocat București">
+    <meta name="twitter:description"
+        content="Cabinet de Avocatură Drăghici Cristian Constantin – consultanță și reprezentare juridică în București.">
+    <meta name="twitter:image" content="https://draghicisiasociatii.ro/imagini/24.jpg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/24.jpg') center/cover no-repeat;
+            color: #2d1e0f;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 10px 40px 40px 40px;
+            margin: 50px auto;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .image-grid figure {
+            margin: 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-grid figcaption {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #2d1e0f;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #5a3e2b;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #2d1e0f;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a3e2b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <section id="despre">
+            <h2>Echipa noastră</h2>
+            <div class="image-grid">
+    <% if (typeof lawyers !== 'undefined' && lawyers.length > 0) { %>
+        
+        <% lawyers.forEach(lawyer => { %>
+            <figure>
+                <img src="<%= lawyer.imagePath %>" alt="<%= lawyer.fullName %>">
+                
+                <figcaption>
+                    <%= lawyer.fullName %>
+                </figcaption>
+            </figure>
+        <% }); %>
+
+    <% } else { %>
+        <p>Nu există date despre avocați.</p>
+    <% } %>
+</div>
+        </section>
+    </div>
+
+     <%- include('../partials/footer') %>
+
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>

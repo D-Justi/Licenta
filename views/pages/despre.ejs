@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre Noi - Firma de Avocatură</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/21.jpg') center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 150vh;
+            justify-content: space-between;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .overlay-text {
+            text-align: justify;
+            font-size: 16px;
+            font-weight: normal;
+            background: rgba(45, 30, 15, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 700px auto 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="overlay-text">
+        <p>Suntem o echipă de avocați dedicați, oferind soluții juridice eficiente și personalizate pentru clienții
+            noștri.</p>
+        <p>Prezentare CABINET</p>
+        <p>
+            Cabinetul de avocatură Drăghici Cristian Constantin reprezintă o platformă juridică care pune accent pe
+            calitatea serviciilor juridice prestate prin cunoașterea în profunzime a problemelor încredințate și
+            identificarea soluțiilor personalizate ce vin în întâmpinarea cerințelor clienților noștri.
+            Suntem o echipă de <%= lawyers.length %> avocați, experiența noastră profesională combinând activitatea de avocați pledanți cu
+            cea de consultanți în domenii precum: drept civil, drept comercial, insolvență, dreptul muncii și
+            securității sociale, construcţii, contencios administrativ și fiscal, farma etc.
+            Ne recomandă seriozitatea și promptitudinea în soluționarea dosarelor. Activăm pe o piață complexă şi din ce
+            în ce mai sofisticată -piaţa avocaturii- de peste 28 de ani.
+            În tot acest timp, am căutat şi căutăm în continuare cele mai bune soluții pentru apărarea drepturilor
+            clienților noștri, prin experiența, responsabilitatea, integritatea și calitatea muncii de care dă dovadă
+            echipa noastră.
+            Misiunea noastră este să asigurăm clienților noștri cele mai eficiente strategii prin oferirea de
+            consultanță de specialitate și asistență juridică în diverse proiecte și litigii complexe cu profesionalism
+            și eficiență. Asistența juridică poate fi acordată la sediul cabinetului într-o locație foarte caldă și
+            primitoare, la sediul clientului sau direct on-line.
+            Ne mai recomandă şi încrederea primită din partea clienţilor noştri, mulţi dintre ei fiindu-ne parteneri
+            încă de la începutul activităţii noastre.
+            Cabinetul nostru este situat într-o locatie centrală, în apropiere de Piaţa Alba Iulia, mai exact pe Calea
+            Dudesti, nr. 94, et. 3, sector 3, Bucureşti.
+            Interesul nostru este să intrăm în contact cu persoane fizice sau juridice interesate de serviciile noastre,
+            să arătăm ceea ce putem furniza ca servicii juridice şi apoi să stabilim relaţii de medie şi/sau lungă
+            durată, fie punctual pentru anumite spețe, fie sub forma unor contracte de asistență juridică (tip abonament
+            lunar) pentru un număr de ore alocate în funcție de necesarul efectiv al clientului nostru.
+            Propunerea concretă este să încheiem contracte de asistență juridică pentru minim 6 luni, interval de timp
+            necesar pentru a putea cunoaște exact natura și complexitatea problemelor clienților noștri. După această
+            perioadă de cunoaștere reciprocă, contractele vor fi adaptate la specificul fiecărui client.
+            Avocaţii care activează în cadrul cabinetului nostru sunt:
+            <% if (lawyers && lawyers.length > 0) { %>
+                <% lawyers.forEach(lawyer => { %>
+                    <li>
+                        <strong><%= lawyer.fullName %></strong> 
+                        <% if(lawyer.role) { %> – <%= lawyer.role %> <% } %>
+                    </li>
+                <% }) %>
+            <% } else { %>
+                <li>Nu există date despre avocați momentan.</li>
+            <% } %>
+        </p>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>

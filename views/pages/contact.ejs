@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Firma de Avocatură</title>
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/24.jpg') center/cover no-repeat;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            height: 150vh;
+            justify-content: space-between;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 10px 40px 40px 40px;
+            margin: 50px auto;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .contact-info {
+            text-align: left;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p><strong>Telefon:</strong><br>+40 722 626 948<br>+40 213 145 562</p>
+
+            <p><strong>Email:</strong> avocat.cristiandraghici@gmail.com</p>
+            <p><strong>Adresă:</strong> Calea Dudești 94, etaj 3, sector 3, București</p>
+        </div>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.547930119836!2d26.1313121!3d44.4205586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff5b4c55a8d3%3A0xf3749e41e47d6371!2sCalea%20Dude%C8%99ti%2094%2C%20Bucure%C8%99ti%20030206%2C%20Romania!5e0!3m2!1sen!2sro!4v1714123456789!5m2!1sen!2sro"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+     <%- include('../partials/footer') %>
+
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>

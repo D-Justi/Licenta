@@ -1,0 +1,38 @@
+
+<header>
+    <h1><%= typeof numeCabinet !== 'undefined' ? numeCabinet : 'Cabinet de Avocatură' %></h1>
+
+    <nav>
+        <ul>
+            <% const currentPath = typeof path !== 'undefined' ? path : ''; %>
+
+            <li>
+                <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">
+                    Acasă
+                </a>
+            </li>
+            <li>
+                <a href="/despre" class="<%= currentPath === '/despre' ? 'active' : '' %>">
+                    Despre noi
+                </a>
+            </li>
+            <li>
+                <a href="/servicii" class="<%= currentPath === '/servicii' ? 'active' : '' %>">
+                    Servicii
+                </a>
+            </li>
+            <li>
+                <a href="/clienti" class="<%= currentPath === '/clienti' ? 'active' : '' %>">
+                    Clienții noștri
+                </a>
+            </li>
+            <li>
+                <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+

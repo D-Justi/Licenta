@@ -1,0 +1,210 @@
+/* Scheduler Styles */
+.scheduler-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: #333;
+}
+
+@media (min-width: 768px) {
+    .scheduler-container {
+        flex-direction: row;
+    }
+}
+
+.lawyer-profile {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.lawyer-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2d1e0f;
+    margin-bottom: 20px;
+}
+
+.lawyer-profile h2 {
+    color: #2d1e0f;
+    margin-bottom: 10px;
+}
+
+.lawyer-profile p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.calendar-section {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    color: #2d1e0f;
+}
+
+.dates-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.date-card {
+    min-width: 70px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #f9f9f9;
+}
+
+.date-card:hover {
+    border-color: #2d1e0f;
+    transform: translateY(-2px);
+}
+
+.date-card.active {
+    background-color: #2d1e0f;
+    color: white;
+    border-color: #2d1e0f;
+}
+
+.date-day {
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.date-num {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #2d1e0f;
+    color: #2d1e0f;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.time-slot:hover {
+    background-color: #2d1e0f;
+    color: white;
+}
+
+.time-slot.booked {
+    background-color: #eee;
+    color: #aaa;
+    border-color: #ddd;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+/* Modal for confirmation */
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+
+.booking-content h3 {
+    color: #2d1e0f;
+    margin-top: 0;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.booking-btn {
+    background-color: #2d1e0f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.booking-btn:hover {
+    background-color: #5a3e2b;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

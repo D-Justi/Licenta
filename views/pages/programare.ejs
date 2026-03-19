@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programează o Întâlnire | Cabinet Avocat</title>
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/24.jpg') center/cover no-repeat;
+            color: #2d1e0f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.95);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/scheduler.css">
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <div class="scheduler-container">
+            <div class="lawyer-profile">
+                <% if (lawyer) { %>
+                    <img id="lawyer-img" src="<%= lawyer.imagePath || '/img/default-user.png' %>" alt="<%= lawyer.fullName %>">
+                    <h2 id="lawyer-name"><%= lawyer.fullName %></h2>
+                    <p id="lawyer-role"><%= lawyer.role %></p>
+                <% } else { %>
+                    <img id="lawyer-img" src="/img/default-user.png" alt="Avocat">
+                    <h2 id="lawyer-name">Avocat</h2>
+                    <p id="lawyer-role"></p>
+                <% } %>
+                <p>Selectați o dată și o oră disponibilă pentru o consultație de 30 de minute la sediul nostru sau online.</p>
+            </div>
+
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <h3>Disponibilitate</h3>
+                    <div id="current-month"></div>
+                </div>
+
+                <div class="dates-grid" id="dates-grid"></div>
+
+                <div class="slots-grid" id="slots-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+    <div id="booking-modal" class="booking-modal">
+        <div class="booking-content">
+            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <h3>Confirmare Programare</h3>
+            <p id="modal-time-display"></p>
+
+            <form class="booking-form" onsubmit="submitBooking(event)">
+                <input type="text" name="name" placeholder="Numele Dumneavoastră" required>
+                <input type="tel" name="phone" placeholder="Număr de Telefon" required>
+                <input type="email" name="email" placeholder="Adresa de Email" required>
+                <textarea name="description"
+                    style="width:100%; height: 60px; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"
+                    placeholder="Scurtă descriere a problemei"></textarea>
+                <button type="submit" class="booking-btn">Confirmă Programarea</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const LAWYER_ID = "<%= selectedLawyerId || '' %>";
+
+        document.getElementById('current-month').textContent =
+            new Date().toLocaleDateString('ro-RO', { month: 'long', year: 'numeric' });
+    </script>
+
+    <script src="js/scheduler.js"></script>
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+/* Wizard Modal Styles */
+.wizard-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+.wizard-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    overflow: hidden;
+}
+
+.wizard-header {
+    background-color: #2d1e0f;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wizard-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+}
+
+.close-wizard {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-wizard:hover,
+.close-wizard:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wizard-body {
+    padding: 30px 20px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wizard-question {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.wizard-options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.wizard-btn {
+    padding: 12px 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    text-align: left;
+    color: #333;
+    /* Explicitly set black text to override global button styles */
+}
+
+.wizard-btn:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    transform: translateX(5px);
+    color: #000;
+}
+
+.wizard-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wizard-nav-btn {
+    background-color: #2d1e0f;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wizard-nav-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.wizard-result {
+    text-align: center;
+    animation: slideIn 0.4s;
+}
+
+.wizard-result img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #2d1e0f;
+}
+
+.wizard-result h3 {
+    color: #2d1e0f;
+    margin-bottom: 10px;
+}
+
+.wizard-result p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.wizard-cta {
+    display: inline-block;
+    background-color: #2d1e0f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Floating Button Styles */
+.wizard-floating-btn {
+    position: fixed;
+    top: 100px;
+    /* Below header */
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #2d1e0f;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.wizard-floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.wizard-floating-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(45, 30, 15, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(45, 30, 15, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(45, 30, 15, 0);
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clienții noștri</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/img/26.jpg') center/cover no-repeat;
+            color: #2d1e0f;
+        }
+
+        header {
+            background: rgba(45, 30, 15, 0.0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 10px 40px 40px 40px;
+            margin: 50px auto;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 30%;
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .client img {
+            width: 40%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-right: 20px;
+        }
+
+        .client-description {
+            width: 60%;
+            text-align: justify;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(45, 30, 15, 0.9);
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="css/wizard.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <section id="clienti">
+            <h2>Clienții noștri</h2>
+
+            <div class="client">
+                <img src="/img/38.jpg" alt="Client 1">
+                <div class="client-description">
+                    <h3>Clienți persoane fizice</h3>
+                    <p>Avocații noștri au asistat și reprezentat mai mult de 4000 de persoane fizice, în diverse spețe,
+                        având rezultate favorabile clienților noștri în peste 95% din cazuri.</p>
+                </div>
+            </div>
+
+            <div class="client">
+                <img src="/img/28.jpg" alt="Client 2">
+                <div class="client-description">
+                    <h3>Clienți persoane juridice</h3>
+                    <p>Avocații noștri au asistat și reprezentat mai mult de 3000 de persoane juridice, în diverse
+                        spețe, având rezultate favorabile clienților noștri în peste 95% din cazuri.
+                        Mulți dintre acești clienți s-au născut și au crescut alături de noi, întrucât întreagă
+                        procedură de constituire și modificare a fost făcută de avocații noștri.</p>
+                </div>
+            </div>
+
+            <div class="client">
+                <img src="/img/45.jpg" alt="Client 3">
+                <div class="client-description">
+                    <h3>Asociații și fundații</h3>
+                    <p>Avocații noștri au asistat și reprezentat mai mult de 100 de asociații, fundații și asociații de
+                        proprietari, în diverse spețe, având rezultate notabile și pentru această categorie de clienți.
+                        O parte dintre acești clienți au devenit instituții respectabile în domeniul afirmării
+                        drepturilor și libertăților civice.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+     <%- include('../partials/footer') %>
+
+    <script src="js/lawyer-match.js"></script>
+</body>
+
+</html>
